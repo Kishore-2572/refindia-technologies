@@ -3,6 +3,7 @@
 /src/config
 /.github
 firebase-debug.log
+/.firebase
 # dependencies
 /node_modules
 /.pnp
