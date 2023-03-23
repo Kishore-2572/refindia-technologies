@@ -10,6 +10,7 @@ import Services from './pages/Services'
 import SecondHandMachines from './pages/SecondHandMachines'
 import NotFound from './pages/NotFound'
 import NavBar from './components/NavBar';
+import FooterBar from './components/FooterBar';
 const App = () => {
   return(
     <BrowserRouter>
@@ -33,7 +34,8 @@ const App = () => {
     </main>
     <footer>
       {/* footnav-start  */}
-      FOOTER NAVBAR 
+      {/* FOOTER NAVBAR  */}
+      <FooterBar/>
       {/* footnav-end */}
     </footer>
     </BrowserRouter>
