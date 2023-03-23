@@ -1,0 +1,21 @@
+.color-nav{
+    background-color:#0467a6;
+}
+Nav .nav-text-head{
+    color: #fff;
+    font-weight: 900;
+    text-decoration: none;
+}
+Nav .nav-text-head:hover{
+    color: #fff;
+    font-weight: 900;
+}
+Nav .nav-text{
+    color: #fff;
+    font-weight: 400;
+    text-decoration: none;
+}
+Nav .nav-text:hover {
+    color:#7cacc1 ;
+}
+/* reference link for hover style https://codepen.io/MatteoDevBN1/pen/eZZYdY */

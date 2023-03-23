@@ -1,4 +1,5 @@
 import React from 'react';
+import './App.css'
 import {BrowserRouter,Route,Router,Routes,Link} from 'react-router-dom'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -8,18 +9,19 @@ import Products from './pages/Products'
 import Services from './pages/Services'
 import SecondHandMachines from './pages/SecondHandMachines'
 import NotFound from './pages/NotFound'
+import NavBar from './components/NavBar';
 const App = () => {
   return(
     <BrowserRouter>
     <header>
           {/*NavBar-start*/}
-          HEADER NAVBAR 
+          <NavBar/>
+          {/* HEADER NAVBAR  */}
           {/*NavBar-end*/}
     </header>
     <main>
     <Routes>
       <Route path='/' element={<Home/>}></Route>
-      <Route path='/about' element={<About/>}></Route>
       <Route path='/contact' element={<Contact/>}></Route>
       <Route path='/products' element={<Products/>}></Route>
       <Route path='/services' element={<Services/>}></Route>
