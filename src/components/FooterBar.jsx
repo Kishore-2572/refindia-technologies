@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import { Link } from 'react-router-dom';
-import '../css/styles2.css';
+import '../css/footer.css';
 const FooterBar = () => {
   return (
     <Container fluid className='footer-color-nav'>

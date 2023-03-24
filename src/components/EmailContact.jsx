@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/esm/Col';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Form from 'react-bootstrap/Form';
-import '../css/styles3.css';
+import '../css/contact.css'
 import ContactMap from "./ContactMap";
 
 const EmailContact = () => {
