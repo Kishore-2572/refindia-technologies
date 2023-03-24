@@ -13,7 +13,9 @@ Nav .nav-text-head:hover{
 Nav .nav-text{
     color: #fff;
     font-weight: 400;
+    font-size: 0.9rem;
     text-decoration: none;
+    /* padding: 0.5rem; */
 }
 Nav .nav-text:hover {
     color:#7cacc1 ;
