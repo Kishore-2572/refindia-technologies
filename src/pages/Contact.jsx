@@ -1,8 +1,11 @@
 import React from 'react'
+import EmailContact from '../components/EmailContact'
 
 function Contact() {
   return (
-    <div>Contact</div>
+    <div>
+      <EmailContact/>
+    </div>
   )
 }
 

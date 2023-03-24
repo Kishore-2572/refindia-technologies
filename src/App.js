@@ -11,6 +11,8 @@ import SecondHandMachines from './pages/SecondHandMachines'
 import NotFound from './pages/NotFound'
 import NavBar from './components/NavBar';
 import FooterBar from './components/FooterBar';
+
+
 const App = () => {
   return(
     <BrowserRouter>
