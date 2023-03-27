@@ -1,8 +1,11 @@
 import React from 'react'
+import LoadingSpinner from '../components/LoadingSpinner'
 
 function Gallery() {
   return (
-    <div>Gallery</div>
+    <div>
+      
+    </div>
   )
 }
 

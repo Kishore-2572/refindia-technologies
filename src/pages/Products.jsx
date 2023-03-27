@@ -3,6 +3,7 @@ import { useContext, useState, useReducer, useEffect } from 'react';
 import { store } from '../store';
 import { db } from '../config/firebase';
 import { getDocs, collection } from 'firebase/firestore';
+import LoadingSpinner from '../components/LoadingSpinner';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -41,8 +42,8 @@ function Products() {
     };
     fetchProducts();
   }, []);
-
-  return <div> {loading ? <div>Loading....</div> : <div>Products</div>} </div>;
+  //time of loading is too short.
+  return <div> {loading ? <div><LoadingSpinner/></div> : <div>Products</div>} </div>;
 }
 
 export default Products;
