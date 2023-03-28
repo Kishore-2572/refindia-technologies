@@ -1,8 +1,11 @@
 import React from 'react'
+import Testmonial from '../components/Testmonial'
 
-function Home() {
+const Home = () => {
   return (
-    <div>Home</div>
+    <div>
+      <Testmonial/>
+    </div>
   )
 }
 

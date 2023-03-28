@@ -4,6 +4,7 @@ import { store } from '../store';
 import { db } from '../config/firebase';
 import { getDocs, collection } from 'firebase/firestore';
 import LoadingSpinner from '../components/LoadingSpinner';
+import Toaster from '../components/Toaster';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -37,6 +38,7 @@ function Products() {
       } catch (err) {
         // *****************************  Error should be shown in Toast **********************************
         console.log(err);
+        <Toaster/>//but need to check that component.
       }
       dispatch({ type: 'FETCHING_COMPLETED' });
     };

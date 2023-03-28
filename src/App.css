@@ -9,6 +9,7 @@
 }
 body{
    overflow-x: hidden;
+   /* background-image: linear-gradient(to right, red , yellow); */
 }
 main{
    padding-top: 4rem;
