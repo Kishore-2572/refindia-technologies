@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "../css/testmonial.css";
+import profile from '../assets/images/profile.png'
 
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper";
@@ -39,33 +40,94 @@ const Testmonial = () => {
             className="mySwiper"
           >
             <SwiperSlide>
-                {/* <h1>xxxx</h1> */}
-                <p>Lorem ipsum dolor necessitatibus rerum, illo totam dolorum beatae ratione et. Quaerat rem neque veritatis?</p>
-              {/* <img src="https://swiperjs.com/demos/images/nature-1.jpg" /> */}
+              <div>
+                <p className="testimonial-comment">modi odio fugit quaerat, amet, reiciendis sequi impedit vitae porro. Consequatur autem libero, architecto assumenda facilis eius dolorum?</p>
+              </div>
+              <div className="testmonial-card">
+                <div className="testmonial-card-user-image">
+                  <img src="https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?b=1&s=170667a&w=0&k=20&c=ahypUC_KTc95VOsBkzLFZiCQ0VJwewfrSV43BOrLETM=" alt="" />
+                </div>
+                <div className="testmonial-card-customer">
+                  <h6>customer name</h6>
+                  <p>plant name</p>
+                </div>
+              </div> 
             </SwiperSlide>
             <SwiperSlide>
-              {/* <img src="https://swiperjs.com/demos/images/nature-2.jpg" /> */}
+              <div>
+                <p className="testimonial-comment">modi odio fugit quaerat, amet, reiciendis sequi impedit vitae porro. Consequatur autem libero, architecto assumenda facilis eius dolorum?</p>
+              </div>
+              <div className="testmonial-card">
+                <div className="testmonial-card-user-image">
+                  <img src="https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?b=1&s=170667a&w=0&k=20&c=ahypUC_KTc95VOsBkzLFZiCQ0VJwewfrSV43BOrLETM=" alt="" />
+                </div>
+                <div className="testmonial-card-customer">
+                  <h6>customer name</h6>
+                  <p>plant name</p>
+                </div>
+              </div> 
             </SwiperSlide>
             <SwiperSlide>
-              {/* <img src="https://swiperjs.com/demos/images/nature-3.jpg" /> */}
+              <div>
+                <p className="testimonial-comment">modi odio fugit quaerat, amet, reiciendis sequi impedit vitae porro. Consequatur autem libero, architecto assumenda facilis eius dolorum?</p>
+              </div>
+              <div className="testmonial-card">
+                <div className="testmonial-card-user-image">
+                  <img src="https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?b=1&s=170667a&w=0&k=20&c=ahypUC_KTc95VOsBkzLFZiCQ0VJwewfrSV43BOrLETM=" alt="" />
+                </div>
+                <div className="testmonial-card-customer">
+                  <h6>customer name</h6>
+                  <p>plant name</p>
+                </div>
+              </div> 
+            </SwiperSlide><SwiperSlide>
+              <div>
+                <p className="testimonial-comment">modi odio fugit quaerat, amet, reiciendis sequi impedit vitae porro. Consequatur autem libero, architecto assumenda facilis eius dolorum?</p>
+              </div>
+              <div className="testmonial-card">
+                <div className="testmonial-card-user-image">
+                  <img src="https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?b=1&s=170667a&w=0&k=20&c=ahypUC_KTc95VOsBkzLFZiCQ0VJwewfrSV43BOrLETM=" alt="" />
+                </div>
+                <div className="testmonial-card-customer">
+                  <h6>customer name</h6>
+                  <p>plant name</p>
+                </div>
+              </div> 
+            </SwiperSlide><SwiperSlide>
+              <div>
+                <p className="testimonial-comment">modi odio fugit quaerat, amet, reiciendis sequi impedit vitae porro. Consequatur autem libero, architecto assumenda facilis eius dolorum?</p>
+              </div>
+              <div className="testmonial-card">
+                <div className="testmonial-card-user-image">
+                  <img src="https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?b=1&s=170667a&w=0&k=20&c=ahypUC_KTc95VOsBkzLFZiCQ0VJwewfrSV43BOrLETM=" alt="" />
+                </div>
+                <div className="testmonial-card-customer">
+                  <h6>customer name</h6>
+                  <p>plant name</p>
+                </div>
+              </div> 
+            </SwiperSlide><SwiperSlide>
+              <div>
+                <p className="testimonial-comment">modi odio fugit quaerat, amet, reiciendis sequi impedit vitae porro. Consequatur autem libero, architecto assumenda facilis eius dolorum?</p>
+              </div>
+              <div className="testmonial-card">
+                <div className="testmonial-card-user-image">
+                  <img src="https://media.istockphoto.com/id/1386479313/photo/happy-millennial-afro-american-business-woman-posing-isolated-on-white.jpg?b=1&s=170667a&w=0&k=20&c=ahypUC_KTc95VOsBkzLFZiCQ0VJwewfrSV43BOrLETM=" alt="" />
+                </div>
+                <div className="testmonial-card-customer">
+                  <h6>customer name</h6>
+                  <p>plant name</p>
+                </div>
+              </div> 
             </SwiperSlide>
             <SwiperSlide>
-              {/* <img src="https://swiperjs.com/demos/images/nature-4.jpg" /> */}
+              
             </SwiperSlide>
             <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-5.jpg" />
+              
             </SwiperSlide>
             <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-6.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-7.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-8.jpg" />
-            </SwiperSlide>
-            <SwiperSlide>
-              <img src="https://swiperjs.com/demos/images/nature-9.jpg" />
+
             </SwiperSlide>
           </Swiper></Col>
       </Row>
