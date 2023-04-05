@@ -21,19 +21,19 @@ const EmailContact = () => {
         <fieldset><h3>Get In Touch</h3></fieldset>
         <Form className="contact-form">
             <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="text" placeholder="ENTER YOUR NAME" />
+                <Form.Control type="text" placeholder="Enter your name" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <PhoneInput className="contact-number" country={"eg"} enableSearch={true} value={phone} onChange={(phone) => setPhone(phone)}/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control type="email" placeholder="ENTER YOUR EMAIL" />
+                <Form.Control type="email" placeholder="Enter your email" />
             </Form.Group>
             <Form.Group className="mb-3" controlId="text">
                 <Form.Control as="textarea"
                               required
                               type="text"
-                              placeholder="ENTER YOUR MESSAGE"
+                              placeholder="Enter your message"
                               cols="5"
                               rows="7"
                 />
