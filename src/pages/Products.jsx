@@ -5,7 +5,7 @@ import { db } from '../config/firebase';
 import { getDocs, collection } from 'firebase/firestore';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Toaster from '../components/Toaster';
-import '../css/products.css'
+import '../css/products.css';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -39,14 +39,25 @@ function Products() {
       } catch (err) {
         // *****************************  Error should be shown in Toast **********************************
         console.log(err);
-        <Toaster/>//but need to check that component.
+        <Toaster />; //but need to check that component.
       }
       dispatch({ type: 'FETCHING_COMPLETED' });
     };
     fetchProducts();
   }, []);
   //time of loading is too short.
-  return <div className='products' > {loading ? <div className='loading-spinner'><LoadingSpinner/></div> : <div>Products</div>} </div>;
+  return (
+    <div className="products">
+      {' '}
+      {loading ? (
+        <div className="loading-spinner">
+          <LoadingSpinner />
+        </div>
+      ) : (
+        <div>products </div>
+      )}{' '}
+    </div>
+  );
 }
 
 export default Products;
