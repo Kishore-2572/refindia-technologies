@@ -45,19 +45,12 @@ function Products() {
     };
     fetchProducts();
   }, []);
+  // console.log(products);
   //time of loading is too short.
-  return (
-    <div className="products">
-      {' '}
-      {loading ? (
-        <div className="loading-spinner">
-          <LoadingSpinner />
-        </div>
-      ) : (
-        <div>products </div>
-      )}{' '}
-    </div>
-  );
+  return <div className='products' > {loading ? <div className='loading-spinner'><LoadingSpinner/></div> : <div>  {products.map((e,idx) =>{
+    return <div>{e.name}</div>
+    // return <Products key={idx}  data={e}/>
+  })} </div>} </div>;
 }
 
 export default Products;
