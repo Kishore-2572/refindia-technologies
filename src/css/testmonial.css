@@ -1,0 +1,88 @@
+#app { height: 100% }
+html,
+body {
+  position: relative;
+  height: 100%;
+}
+
+body {
+  background: #eee;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  color: #000;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper {
+  width: 100%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.swiper-slide {
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  background-size: cover;
+  width: 300px;
+  height: 300px;
+  border-radius: 25px;
+  background-color: #7cacc1;
+}
+
+.swiper-slide img {
+  display: block;
+  width: 100%;
+  border-radius: 25px;
+}
+.swiper-slide .testimonial-comment{
+    text-align: center;
+    padding: 5px;
+    position: absolute;
+    top: 0.5rem;
+    left: 0;
+
+}
+.testmonial-heading{
+  text-align: center;
+}
+.testmonial-text{
+  text-align: center;
+  word-wrap: break-word;
+}
+.testmonial-header{
+  max-width:55%;
+  margin:0 auto !important;
+  font-size:1rem;
+  font-weight:400;
+}
+@media only screen and (max-width:600px){
+  .testmonial-header{
+    max-width:100%;
+  }
+}
+.testmonial-card{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  position: absolute;
+  bottom: 1rem;
+  left: 0rem;
+  /* position: absolute; */
+}
+.testmonial-card-user-image{
+  height: 3rem;
+  width: 3rem;
+}
+
+.testmonial-card-user-image > img {
+  height: 100%;
+}
+.testmonial-card-customer{
+  line-height: 0.5rem;
+}

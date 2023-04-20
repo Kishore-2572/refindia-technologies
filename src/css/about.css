@@ -1,0 +1,29 @@
+.teamframe{
+    width: 100%;
+}
+.teamframe img{
+    width: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+}
+.teamframe-text{
+    text-align: start;
+}
+.team-member-row{
+    margin-bottom: 3rem;
+}
+@media only screen and (max-width:600px){
+    .team-member-card{
+        margin-bottom: 2rem;
+    }
+    .team-member-row{
+        margin-bottom: 1rem;
+    }
+    .team-member-card{
+        margin-left: 1.25rem;
+    }
+    .teamframe-text{
+        margin-top: 2rem;
+    }
+
+}
