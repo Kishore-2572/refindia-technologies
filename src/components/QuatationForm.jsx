@@ -16,7 +16,7 @@ const QuatationForm = () => {
         <div className='form-customer'>
             <button onClick={()=>setButtonpopup(true)}>
                 {/* <FiMessageSquare/> */}
-                Hello
+                
             </button>
             <Popup trigger={buttonpopup} setTrigger={setButtonpopup}>
             </Popup>

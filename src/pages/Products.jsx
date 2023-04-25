@@ -14,7 +14,7 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
-// import {motion} from 'framer-motion'
+import {motion} from 'framer-motion'
 
 import '../css/products.css';
 
