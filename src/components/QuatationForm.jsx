@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/QuatationFrom.css'
 import Popup from './Popup';
 import { useState,useEffect } from 'react';
-import {FiMessageSquare} from 'react-icons/fi'
+// import {FiMessageSquare} from 'react-icons/fi'
 const QuatationForm = () => {
     const[buttonpopup,setButtonpopup]=useState(false);
     const[timepopup,setTimepopup]=useState(false); 
@@ -15,7 +15,8 @@ const QuatationForm = () => {
     <div className='form-popup'>
         <div className='form-customer'>
             <button onClick={()=>setButtonpopup(true)}>
-                <FiMessageSquare/>
+                {/* <FiMessageSquare/> */}
+                Hello
             </button>
             <Popup trigger={buttonpopup} setTrigger={setButtonpopup}>
             </Popup>

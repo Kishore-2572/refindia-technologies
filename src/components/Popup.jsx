@@ -1,12 +1,13 @@
 import React from 'react'
 import '../css/popup.css'
-import {AiFillCloseSquare} from 'react-icons/ai'
+// import {AiFillCloseSquare} from 'react-icons/ai'
 const Popup = (props) => {
   return (props.trigger)?(
     <div className='popup'>
         <div className='popup-inner'>
             <button className='close-button' onClick={()=>props.setTrigger(false)}>
-              <AiFillCloseSquare/>
+              {/* <AiFillCloseSquare/> */}
+              Testing
             </button>
             {/* {props.childern} */}
             <form action="">
