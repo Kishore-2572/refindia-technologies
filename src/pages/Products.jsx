@@ -5,7 +5,6 @@ import { db } from '../config/firebase';
 import { getDocs, collection } from 'firebase/firestore';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Toaster from '../components/Toaster';
-import '../css/products.css'
 import '../css/products_filter.css'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -14,7 +13,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
-import {motion} from 'framer-motion'
 
 import '../css/products.css';
 

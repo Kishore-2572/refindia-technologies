@@ -22,6 +22,7 @@ const App = () => {
           {/*NavBar-start*/}
           <NavBar/>
           {/* HEADER NAVBAR  */}
+          {/*NavBar-end*/}
     </header>
     <main>
     <Routes>
