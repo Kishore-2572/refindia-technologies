@@ -12,6 +12,8 @@ import NotFound from './pages/NotFound'
 import NavBar from './components/NavBar';
 import FooterBar from './components/FooterBar';
 
+import 'aos/dist/aos.css';
+
 
 const App = () => {
   return(
