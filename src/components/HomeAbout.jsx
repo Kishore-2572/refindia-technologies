@@ -12,12 +12,11 @@ const HomeAbout=()=>{
       
 
   return (
-    
-    <Container>
-      <div className='homeabout-heading'>
-      <h2 className='mt-5'><span style={{color:'blue'}}>ABOUT</span> US</h2>
-      </div>
-        
+<div className='mt-5'>
+  <br/>
+  
+        <Container>
+        <h2 className='mt-5'><span style={{color:'blue'}}>ABOUT</span> US</h2>
       <Row>
         <Col xs={12} md={6}>
             <div data-aos="fade-out" data-aos-delay="500" data-aos-duration="2000">
@@ -31,6 +30,7 @@ const HomeAbout=()=>{
         </Col>
       </Row>
     </Container>
+    </div>
   );
 };
 

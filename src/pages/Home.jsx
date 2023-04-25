@@ -8,7 +8,7 @@ import '../css/home.css';
 const Home = () => {
   return (
     <div>
-      {/* <HomeCarousel /> */}
+       <HomeCarousel /> 
       <HomeAbout />
       <HomeServices />
       <Testmonial />
