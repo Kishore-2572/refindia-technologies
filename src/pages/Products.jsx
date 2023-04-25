@@ -5,7 +5,7 @@ import { db } from '../config/firebase';
 import { getDocs, collection } from 'firebase/firestore';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Toaster from '../components/Toaster';
-<<<<<<< HEAD
+// <<<<<<< HEAD
 import '../css/products.css'
 import '../css/products_filter.css'
 import Button from 'react-bootstrap/Button';
@@ -17,9 +17,9 @@ import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
 import {motion} from 'framer-motion'
 
-=======
+// =======
 import '../css/products.css';
->>>>>>> acc0a6b173e61e5bfdb1e7e4dc53267ab8322f37
+// >>>>>>> acc0a6b173e61e5bfdb1e7e4dc53267ab8322f37
 
 const reducer = (state, action) => {
   switch (action.type) {
