@@ -15,6 +15,7 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
 import '../css/products.css';
+import { Link } from 'react-router-dom';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -152,7 +153,8 @@ useEffect(()=>{
                     <Card.Title>{e.category}</Card.Title>
                     <Card.Title>{e.material}</Card.Title>
                     <Card.Title>{e['automatic grade']}</Card.Title>
-                    <Button className='primary'>look</Button>
+                    <Link to={`/products/${e.id}`}><Button className='primary'>look</Button></Link>
+              
                     </Card.Body>
                 </Card>
             </Col>

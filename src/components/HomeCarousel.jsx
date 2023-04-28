@@ -10,8 +10,8 @@ export default function HomeCarousel() {
           alt="First slide"
         />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+          <h3>Who We Are?</h3>
+          <p>“Refindia Technologies” is instrumental as the manufacturer in this industry since 2018. The main headquarter of our company is situated in Namakkal, Tamil Nadu.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={1000}>
@@ -22,8 +22,8 @@ export default function HomeCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+          <h3>What We Do?</h3>
+          <p>we offer to our customers are Milk Condensing Machine, Curd Making Plant and all kind of dairy machinaries.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item interval={1000}>
@@ -34,9 +34,9 @@ export default function HomeCarousel() {
         />
 
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Where We're Going</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          “We don't build a business, We build people, then people build the business.” 
           </p>
         </Carousel.Caption>
       </Carousel.Item>

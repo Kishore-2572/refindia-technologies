@@ -37,6 +37,8 @@ const Testmonial = () => {
             }}
             pagination={true}
             modules={[EffectCoverflow, Pagination]}
+            speed={1000}
+            // direction={"horizontal"}
             className="mySwiper"
           >
             <SwiperSlide>
