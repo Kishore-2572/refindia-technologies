@@ -13,6 +13,7 @@ import NavBar from './components/NavBar';
 import FooterBar from './components/FooterBar';
 
 import 'aos/dist/aos.css';
+import ProductInfo from './pages/ProductInfo';
 
 
 const App = () => {
@@ -29,6 +30,7 @@ const App = () => {
       <Route path='/' element={<Home/>}></Route>
       <Route path='/contact' element={<Contact/>}></Route>
       <Route path='/products' element={<Products/>}></Route>
+      <Route path='/products/:id' element={<ProductInfo/>}></Route>
       <Route path='/services' element={<Services/>}></Route>
       <Route path='/gallery' element={<Gallery/>}></Route>
       <Route path='/about' element={<About/>}></Route>
