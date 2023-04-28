@@ -13,7 +13,7 @@ const QuatationForm = () => {
   return (
     <div className='form-popup'>
         <div className='form-customer'>
-            <i onClick={()=>setButtonpopup(true)} class="fa-regular fa-message"></i>
+            <i onClick={()=>setButtonpopup(true)} className="fa-regular fa-message"></i>
             <Popup trigger={buttonpopup} setTrigger={setButtonpopup}>
             </Popup>
             <Popup trigger={timepopup} setTrigger={setTimepopup}>

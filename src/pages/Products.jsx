@@ -5,8 +5,8 @@ import { db } from '../config/firebase';
 import { getDocs, collection } from 'firebase/firestore';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Toaster from '../components/Toaster';
-import '../css/products.css'
-import '../css/products_filter.css'
+import '../css/products.css';
+import '../css/products_filter.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
@@ -29,15 +29,18 @@ const reducer = (state, action) => {
 function Products() {
   const [{ loading }, dispatch] = useReducer(reducer, {
     loading: false,
-
   });
   const { state, dispatch: ctxDispatch } = useContext(store);
   const [products, setProducts] = useState([]);
-  const [filter,setFilter] = useState([]);
-  const [search,setSearch] = useState('');
-//modified start
-  const [status,setStatus] = useState(false)
-//modified end
+  const [filter, setFilter] = useState([]);
+  const [search, setSearch] = useState('');
+  const [all, setAll] = useState(true);
+  const [milk, setMilk] = useState(false);
+  const [curd, setCurd] = useState(false);
+  const [paneer, setPaneer] = useState(false);
+  const [yogurt, setYogurt] = useState(false);
+  const [status, setStatus] = useState(false);
+
   useEffect(() => {
     // Fetching products from firebase collection
     const fetchProducts = async () => {
@@ -50,9 +53,8 @@ function Products() {
           id: doc.id,
         }));
         setProducts(filteredData);
-        //aaa 
-        setStatus(true)
-        setFilter(filteredData)
+        setStatus(true);
+        setFilter(filteredData);
         ctxDispatch({ type: 'SAVE_PRODUCTS', payload: filteredData });
       } catch (err) {
         // *****************************  Error should be shown in Toast **********************************
@@ -63,108 +65,174 @@ function Products() {
     };
     fetchProducts();
   }, []);
-  // console.log(products)
-  const[prod,setProd]=useState([])
-    const filterapply = ()=>{
-    if(status===true){
-    var pr = []
-    console.log("inside in working")
-    console.log(products)
-    products.map((p) => {
-      if(p.category==="milk" && milk===true){
-        pr.push(p)
+
+  useEffect(() => {
+    // filterapply()
+    if (status === true) {
+      if (all) {
+        setFilter(products);
+      } else {
+        var pr = [];
+        products.forEach((p) => {
+          if (milk && p.category === 'milk') {
+            pr.push(p);
+          }
+          if (curd && p.category === 'curd') {
+            pr.push(p);
+          }
+          if (paneer && p.category === 'paneer') {
+            pr.push(p);
+          }
+          if (yogurt && p.category === 'yogurt') {
+            pr.push(p);
+          }
+        });
+        setFilter(pr);
       }
-      if(p.category==="curd" && curd===true){
-        pr.push(p)
+    }
+  }, [all, milk, curd, yogurt, paneer]);
+
+  const handleFilter = (val) => {
+    if (val === 'all') {
+      if (all) return;
+      else {
+        setAll(true);
+        setMilk(false);
+        setCurd(false);
+        setPaneer(false);
+        setYogurt(false);
       }
-      if(p.category==="paneer" && paneer===true){
-        pr.push(p)
+    } else if (val === 'milk') {
+      if (milk && !curd && !yogurt && !paneer) {
+        setAll(true);
+        setMilk(false);
+      } else {
+        setAll(false);
+        setMilk(!milk);
       }
-      if(p.category==="yogurt" && yogurt===true){
-        pr.push(p)
+    } else if (val === 'paneer') {
+      if (!milk && !curd && !yogurt && paneer) {
+        setAll(true);
+        setPaneer(false);
+      } else {
+        setAll(false);
+        setPaneer(!paneer);
       }
-    })
-    setProd(pr)
-    if(!milk && !curd && !paneer && !yogurt){
-      setFilter(products)
-    } 
-    else{
-      setFilter(prod)
+    } else if (val === 'curd') {
+      if (!milk && curd && !yogurt && !paneer) {
+        setAll(true);
+        setCurd(false);
+      } else {
+        setAll(false);
+        setCurd(!curd);
+      }
+    } else if (val === 'yogurt') {
+      if (!milk && !curd && yogurt && !paneer) {
+        setAll(true);
+        setYogurt(false);
+      } else {
+        setAll(false);
+        setYogurt(!yogurt);
+      }
     }
-  }
-}
-useEffect(()=>{
-  //console.log(prod)
-  filterapply()
-  //console.log(prod)
-})
-  console.log(status);
-  console.log(products);
-  //time of loading is too short.
-  const[milk,setMilk]=useState(false)
-  const[curd,setCurd]=useState(false)
-  const[paneer,setpaneer]=useState(false)
-  const[yogurt,setYogurt]=useState(false)
-  const handleClick=((check)=>{
-    if(check==="milk"){
-      setMilk(!milk);
-    }
-    else if(check==="curd"){
-      setCurd(!curd);
-    }
-    else if(check==="paneer"){
-      setpaneer(!paneer);
-    }
-    else if(check==="yogurt"){
-      setYogurt(!yogurt);
-    }
-  })
-  // console.log(clicked)
-  return <div className='products' > {loading ? <div className='loading-spinner'><LoadingSpinner/></div> : 
-  <div>
-       <Navbar bg="light" expand="lg" className='products-filter'>
-      <Container>
-      {/* onClick={()=>filterResult("milk")} */}
-        <Button className={milk?"clicked":"not_clicked"} onClick={()=>handleClick("milk")} >Milk Plant</Button>
-        <Button className={curd?"clicked":"not_clicked"} onClick={()=>handleClick("curd")}>Curd Plant</Button>
-        <Button className={paneer?"clicked":"not_clicked"} onClick={()=>handleClick("paneer")}>paneer Plant</Button>
-        <Button className={yogurt?"clicked":"not_clicked"} onClick={()=>handleClick("yogurt")}>Yogurt Plant</Button>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="search by product name"
-              className="me-2"
-              aria-label="Search"
-              onChange={(e)=>setSearch(e.target.value)}
-            />
-          </Form>
-      </Container>
-    </Navbar>
-      <Container fluid className='mx-2'>
-        <Row className='mt-4 mx-2'>
-            {filter.filter((e)=>{
-              return search.toLowerCase()===''? e : e.category.toLowerCase().includes(search)||e.name.toLowerCase().includes(search);
-            }).map((e,idx) =>{
-                return  <Col md={3} xs={12}>
-                <Card className='team-member-card mb-2' style={{ width: '18rem',height:'27rem' }} >
-                    <Card.Img variant="top" src={e.image} width="100%" height="200px"/>
-                    <Card.Body>
-                    <Card.Title><h5>{e.name}</h5></Card.Title>
-                    <Card.Title>{e.category}</Card.Title>
-                    <Card.Title>{e.material}</Card.Title>
-                    <Card.Title>{e['automatic grade']}</Card.Title>
-                    <Link to={`/products/${e.id}`}><Button className='primary'>look</Button></Link>
-              
-                    </Card.Body>
-                </Card>
-            </Col>
-                  } 
-              )} 
-  
-         </Row>
-  </Container>
-  </div>
-   } </div>;
+  };
+
+  return (
+    <div className="products">
+      {' '}
+      {loading ? (
+        <div className="loading-spinner">
+          <LoadingSpinner />
+        </div>
+      ) : (
+        <div>
+          <Navbar bg="light" expand="lg" className="products-filter">
+            <Container>
+              {/* onClick={()=>filterResult("milk")} */}
+              <Button
+                className={all ? 'clicked' : 'not_clicked'}
+                onClick={() => handleFilter('all')}
+              >
+                All
+              </Button>
+              <Button
+                className={milk ? 'clicked' : 'not_clicked'}
+                onClick={() => handleFilter('milk')}
+              >
+                Milk Plant
+              </Button>
+              <Button
+                className={curd ? 'clicked' : 'not_clicked'}
+                onClick={() => handleFilter('curd')}
+              >
+                Curd Plant
+              </Button>
+              <Button
+                className={paneer ? 'clicked' : 'not_clicked'}
+                onClick={() => handleFilter('paneer')}
+              >
+                paneer Plant
+              </Button>
+              <Button
+                className={yogurt ? 'clicked' : 'not_clicked'}
+                onClick={() => handleFilter('yogurt')}
+              >
+                Yogurt Plant
+              </Button>
+              <Form className="d-flex">
+                <Form.Control
+                  type="search"
+                  placeholder="search by product name"
+                  className="me-2"
+                  aria-label="Search"
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </Form>
+            </Container>
+          </Navbar>
+          <Container fluid className="mx-2">
+            <Row className="mt-4 mx-2">
+              {filter
+                .filter((e) => {
+                  return search.toLowerCase() === ''
+                    ? e
+                    : e.category.toLowerCase().includes(search) ||
+                        e.name.toLowerCase().includes(search);
+                })
+                .map((e, idx) => {
+                  return (
+                    <Col key={idx} lg={3} md={6} sm={12}>
+                      <Card
+                        className="team-member-card mb-2"
+                        style={{ width: '18rem', height: '27rem' }}
+                      >
+                        <Card.Img
+                          variant="top"
+                          src={e.images[0]}
+                          width="100%"
+                          height="200px"
+                        />
+                        <Card.Body>
+                          <Card.Title>
+                            <h5>{e.name}</h5>
+                          </Card.Title>
+                          <Card.Title>{e.category}</Card.Title>
+                          <Card.Title>{e.material}</Card.Title>
+                          <Card.Title>{e['automatic_grade']}</Card.Title>
+                          <Link to={`/products/${e.id}`}>
+                            <Button className="primary">View</Button>
+                          </Link>
+                        </Card.Body>
+                      </Card>
+                    </Col>
+                  );
+                })}
+            </Row>
+          </Container>
+        </div>
+      )}{' '}
+    </div>
+  );
 }
 
 export default Products;
