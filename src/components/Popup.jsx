@@ -1,12 +1,11 @@
 import React from 'react'
 import '../css/popup.css'
-import {AiFillCloseSquare} from 'react-icons/ai'
 const Popup = (props) => {
   return (props.trigger)?(
     <div className='popup'>
         <div className='popup-inner'>
             <button className='close-button' onClick={()=>props.setTrigger(false)}>
-              <AiFillCloseSquare/>
+            <i className="fa-solid fa-circle-xmark"></i>
             </button>
             {/* {props.childern} */}
             <form action="">
