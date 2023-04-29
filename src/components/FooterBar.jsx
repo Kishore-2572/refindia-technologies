@@ -2,9 +2,38 @@ import React from 'react'
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import '../css/footer.css';
 const FooterBar = () => {
+
+  const navigate = useNavigate();
+
+  const goToMilk = () =>{
+    navigate({
+      pathname : '/products',
+      search : '?category=milk'
+    })
+  }
+  const goToCurd = () =>{
+    navigate({
+      pathname : '/products',
+      search : '?category=curd'
+    })
+  }
+  const goToPaneer = () =>{
+    navigate({
+      pathname : '/products',
+      search : '?category=paneer'
+    })
+  }
+  const goToYogurt = () =>{
+    navigate({
+      pathname : '/products',
+      search : '?category=yogurt'
+    })
+  }
+
+
   return (
     <Container fluid className='footer-color-nav'>
        <Row>
@@ -12,10 +41,10 @@ const FooterBar = () => {
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing oluptate magni nam temporibus maiores voluptatem nisi ab vitae id quod officia.</p></Col>
         <Col className='foot-nav' xs={12} md={3}>
           <h5>PRODUCTS</h5>
-          <p><Link to="/products">Milk Plant</Link></p>
-          <p><Link to="/products">Curd Plant</Link></p>
-          <p><Link to="/products">Panner Plant</Link></p>
-          <p><Link to="/products">Yoget Plant</Link></p>
+          <p onClick={goToMilk}>Milk Plant</p>
+          <p onClick={goToCurd}>Curd Plant</p>
+          <p onClick={goToPaneer}>Panner Plant</p>
+          <p onClick={goToYogurt}>Yogurt Plant</p>
 
         </Col>
         <Col className='foot-nav'xs={12} md={3}>
@@ -23,7 +52,7 @@ const FooterBar = () => {
           <p><Link to='/'>HOME</Link></p>
           <p><Link to="/products">PRODUCTS</Link></p>
           <p><Link to='/services'>SERVICES</Link></p>
-          <p><Link to='/secondhandmachines'>SECONDHAND</Link></p>
+          <p><Link to='/marketplace'>USED PRODUCTS</Link></p>
           <p><Link to='/gallery'>GALLERY</Link></p>
           <p><Link to='/about'>ABOUT US</Link></p>
           <p><Link to='/contact'>CONTACT US</Link></p>

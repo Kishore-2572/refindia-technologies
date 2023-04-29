@@ -7,7 +7,7 @@ import Contact from './pages/Contact'
 import Gallery from './pages/Gallery'
 import Products from './pages/Products'
 import Services from './pages/Services'
-import SecondHandMachines from './pages/SecondHandMachines'
+import MarketPlace from './pages/MarketPlace'
 import NotFound from './pages/NotFound'
 import NavBar from './components/NavBar';
 import FooterBar from './components/FooterBar';
@@ -34,7 +34,7 @@ const App = () => {
       <Route path='/services' element={<Services/>}></Route>
       <Route path='/gallery' element={<Gallery/>}></Route>
       <Route path='/about' element={<About/>}></Route>
-      <Route path='/secondhandmachines' element={<SecondHandMachines/>}></Route>
+      <Route path='/marketplace' element={<MarketPlace/>}></Route>
       <Route path='/*' element={<NotFound/>}></Route>
     </Routes>
     </main>

@@ -18,7 +18,7 @@ const EmailContact = () => {
             <ContactMap/>
         </Col>
         <Col xs={12} md={6}  >
-        <fieldset><h3>Get In Touch</h3></fieldset>
+        <fieldset><h3><span style={{color:'blue'}}>Get In </span>Touch</h3></fieldset>
         <Form className="contact-form">
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Control type="text" placeholder="Enter your name" />

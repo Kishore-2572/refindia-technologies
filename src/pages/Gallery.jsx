@@ -9,8 +9,8 @@ const Gallery = () => {
   return (
  <>
     <div className='heading text-center mt-5'>
-<h1 className='display-6'><span style={{color:'blue'}}>G</span>ALLERY</h1>
-<p><span style={{color:'blue'}}>W</span>elcome to our manufacturing plant gallery page! Here, you can get a glimpse of our cutting-edge facility and the high-tech equipment and machinery that we use to produce our products.
+<h1 className='display-6'><span style={{color:'blue'}}>GAL</span>LERY</h1>
+<p><span style={{color:'blue'}}>Welcome</span> to our manufacturing plant gallery page! Here, you can get a glimpse of our cutting-edge facility and the high-tech equipment and machinery that we use to produce our products.
 </p>
     </div>
     <MDBRow>

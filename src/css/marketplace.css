@@ -1,0 +1,26 @@
+.sh-no-products {
+  width: 100wh;
+  text-align: center;
+}
+
+.sh-no-products > h3 {
+  text-align: center;
+  padding-top: 5rem;
+}
+
+.sh-no-products > img {
+  margin: 5rem auto;
+  width: 20rem;
+}
+
+.sh-products {
+  display: flex;
+  gap: 2rem;
+}
+
+.sh-product {
+  width: 20rem;
+  height: 20rem;
+  background-color: blue;
+  margin: 2rem 1rem;
+}

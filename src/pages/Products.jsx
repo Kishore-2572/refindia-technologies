@@ -15,7 +15,7 @@ import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
 import '../css/products.css';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -31,6 +31,7 @@ function Products() {
     loading: false,
   });
   const { state, dispatch: ctxDispatch } = useContext(store);
+  const [searchParams] = useSearchParams();
   const [products, setProducts] = useState([]);
   const [filter, setFilter] = useState([]);
   const [search, setSearch] = useState('');
@@ -55,6 +56,9 @@ function Products() {
         setProducts(filteredData);
         setStatus(true);
         setFilter(filteredData);
+        if (searchParams.get('category')) {
+          handleFilter(searchParams.get('category'));
+        }
         ctxDispatch({ type: 'SAVE_PRODUCTS', payload: filteredData });
       } catch (err) {
         // *****************************  Error should be shown in Toast **********************************
