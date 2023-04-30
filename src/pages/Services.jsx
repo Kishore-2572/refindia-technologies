@@ -67,11 +67,6 @@ const Services = () => {
               </Card.Body>
             </Card>
           </Col>
-        </Row>
-      </Container>
-
-      <Container className="mt-5">
-        <Row>
           <Col lg={4} md={6} sm={12}>
             <Card>
               <div className="services-card-div">
@@ -128,11 +123,6 @@ const Services = () => {
               </Card.Body>
             </Card>
           </Col>
-        </Row>
-      </Container>
-
-      <Container className="mt-5">
-        <Row>
           <Col lg={4} md={6} sm={12}>
             <Card>
               <div className="services-card-div">
