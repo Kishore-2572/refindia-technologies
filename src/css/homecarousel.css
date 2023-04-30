@@ -8,3 +8,21 @@
     text-decoration: none;
     color: white;
 }
+
+.carousel-button:hover{
+    background-color: white;
+}
+
+.carousel-button:hover a{
+    color: #0467a6;
+}
+
+
+.cc-1{
+    display: flex;
+}
+
+.cc-2{
+    display: flex;
+    justify-content: end;
+}
