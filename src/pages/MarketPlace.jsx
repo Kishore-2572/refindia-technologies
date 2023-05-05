@@ -6,6 +6,9 @@ import { getDocs, collection } from 'firebase/firestore';
 import Toaster from '../components/Toaster';
 import LoadingSpinner from '../components/LoadingSpinner';
 import '../css/marketplace.css';
+import MarketPlaceFilter from '../components/MarketPlaceFilter';
+import { Button, Card, Col, Container, Row } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -47,7 +50,7 @@ function MarketPlace() {
     };
     fetchProducts();
   }, []);
-
+  console.log(products);
   return (
     //price range filter min-max filter
     //catogeory check box filter
@@ -63,6 +66,7 @@ function MarketPlace() {
         </div>
       ) : (
         <div>
+          <MarketPlaceFilter/>
           {filter.length == 0 ? (
             <div className="sh-no-products">
               <h3>Currently there isn't any used products. Check back later</h3>
@@ -72,7 +76,41 @@ function MarketPlace() {
               />
             </div>
           ) : (
-            <div className="sh-products">
+            <Container fluid className='mx-2'>
+              <Row className='mt-2 mx-2'>
+                {
+                  filter.map((e, idx) => {
+                    return(
+                      <Col key={idx} lg={3} md={6} sm={12}>
+                                              <Card
+                        className="team-member-card mb-2"
+                        style={{ width: '18rem', height: '27rem' }}
+                      >
+                        <Card.Img
+                          variant="top"
+                          src={e.images[0]}
+                          width="100%"
+                          height="200px"
+                        />
+                        <Card.Body>
+                          <Card.Title>
+                            <h5>{e.name}</h5>
+                          </Card.Title>
+                          <Card.Title>{e.category}</Card.Title>
+                          <Card.Title>{e['cost']}</Card.Title>
+                          {/* must need attribute is no of days used  */}
+                          <Card.Title>{e['no_of_months_used']}</Card.Title>
+                          <Link to={`/products/${e.id}`}>
+                            <Button className="primary">View</Button>
+                          </Link>
+                        </Card.Body>
+                      </Card>
+                      </Col>
+                    );
+                  })
+                }
+              </Row>
+              {/* <div className="sh-products">
               {' '}
               {filter.map((e, idx) => {
                 return (
@@ -81,7 +119,8 @@ function MarketPlace() {
                   </div>
                 );
               })}
-            </div>
+            </div> */}
+            </Container>
           )}
           <QuatationForm />
         </div>

@@ -150,3 +150,7 @@ const ProductInfo = () => {
 };
 //probelm is occuring while setting relatedProduct state.
 export default ProductInfo;
+//addproducts//update//edit//crud
+//CRM//manual entry for customers
+//secondhand product//add products
+//email//verfication//customers

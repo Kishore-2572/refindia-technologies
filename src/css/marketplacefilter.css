@@ -1,0 +1,66 @@
+.sidenav-filter{
+    width: 300px;
+}
+.filter-btn{
+    position: fixed;
+    top: 45%;
+    left:0rem;
+    z-index:100000;
+    background-color: #0467a6;
+    border: 0.2px solid black;
+    height: 2rem;
+    padding: 0.25rem;
+    border-radius: 5%;
+}
+.filter-btn > .fa-angles-right{
+    font-size: 1rem;
+}
+.filter-btn > .fa-angles-right:hover{
+    rotate: 180deg;
+}
+
+.filter-text{
+    position: fixed;
+    top: 38%;
+    left:-0.50rem;
+    rotate: 270deg;
+    z-index:500000;
+    font-weight: bolder;
+    font-size: 1rem;
+}
+.market-place-price-filter{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: flex-start;
+}
+/* .filter-head{
+    display: inline;
+} */
+.filter-value{
+    width: 100px;
+}
+.filter-offcanvas-btn{
+    width: 100px;
+    position: absolute;
+    right: 0.5rem;
+    bottom:2rem;
+}
+.market-place-category-filter{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+}
+.market-place-category-filter > div{
+    margin-top: 0.5rem;
+}
+.category-filter-head{
+    width: 20px;
+    height: 20px;
+}
+.category-filter-value{
+    display: inline;
+    margin-left: 1rem;
+    font-size: 20px;
+    margin-bottom: 1rem;
+}
