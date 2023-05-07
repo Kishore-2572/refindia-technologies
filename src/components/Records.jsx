@@ -2,7 +2,7 @@ import React from 'react'
 import '../css/records.css'
 const Records = () => {
   return (
-    <div className="container">
+    <div className="container" data-aos="fade-in" data-aos-delay="100" data-aos-duration="2000">
 
   <ul className="timeline">
     <li>
