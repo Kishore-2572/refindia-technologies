@@ -1,18 +1,16 @@
 import React from 'react';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-
 import '../css/services.css';
 
 import AOS from 'aos';
 import { useEffect } from 'react';
 const Services = () => {
-    useEffect(() => {
-        AOS.init({
-          duration: 3000, // Set the animation duration (in ms)
-          easing: 'ease-in-out', // Set the animation easing
-        });
-      }, []);
-      
+  useEffect(() => {
+    AOS.init({
+      duration: 3000, // Set the animation duration (in ms)
+      easing: 'ease-in-out', // Set the animation easing
+    });
+  }, []);
 
   return (
     <div className="services mb-3">
@@ -22,7 +20,11 @@ const Services = () => {
         </h2>
         <Row>
           <Col lg={4} md={6} sm={12}>
-            <Card data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
+            <Card
+              data-aos="fade-in"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
               <div className="services-card-div">
                 <Card.Img
                   className="services-img"
@@ -41,7 +43,11 @@ const Services = () => {
             </Card>
           </Col>
           <Col lg={4} md={6} sm={12}>
-            <Card data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
+            <Card
+              data-aos="fade-in"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
               <div className="services-card-div">
                 <Card.Img
                   variant="top"
@@ -59,7 +65,11 @@ const Services = () => {
             </Card>
           </Col>
           <Col lg={4} md={6} sm={12}>
-            <Card data-aos="fade-in" data-aos-delay="100" data-aos-duration="1000">
+            <Card
+              data-aos="fade-in"
+              data-aos-delay="100"
+              data-aos-duration="1000"
+            >
               <div className="services-card-div">
                 <Card.Img
                   variant="top"
@@ -78,7 +88,11 @@ const Services = () => {
             </Card>
           </Col>
           <Col lg={4} md={6} sm={12}>
-            <Card data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000">
+            <Card
+              data-aos="fade-in"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+            >
               <div className="services-card-div">
                 <Card.Img
                   variant="top"
@@ -96,7 +110,11 @@ const Services = () => {
             </Card>
           </Col>
           <Col lg={4} md={6} sm={12}>
-            <Card data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000">
+            <Card
+              data-aos="fade-in"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+            >
               <div className="services-card-div">
                 <Card.Img
                   variant="top"
@@ -114,7 +132,11 @@ const Services = () => {
             </Card>
           </Col>
           <Col lg={4} md={6} sm={12}>
-            <Card data-aos="fade-in" data-aos-delay="300" data-aos-duration="1000">
+            <Card
+              data-aos="fade-in"
+              data-aos-delay="300"
+              data-aos-duration="1000"
+            >
               <div className="services-card-div">
                 <Card.Img
                   variant="top"
@@ -134,7 +156,11 @@ const Services = () => {
             </Card>
           </Col>
           <Col lg={4} md={6} sm={12}>
-            <Card data-aos="fade-in" data-aos-delay="500" data-aos-duration="1000">
+            <Card
+              data-aos="fade-in"
+              data-aos-delay="500"
+              data-aos-duration="1000"
+            >
               <div className="services-card-div">
                 <Card.Img
                   variant="top"
@@ -152,7 +178,11 @@ const Services = () => {
             </Card>
           </Col>
           <Col lg={4} md={6} sm={12}>
-            <Card data-aos="fade-in" data-aos-delay="500" data-aos-duration="1000">
+            <Card
+              data-aos="fade-in"
+              data-aos-delay="500"
+              data-aos-duration="1000"
+            >
               <div className="services-card-div">
                 <Card.Img
                   variant="top"
@@ -170,7 +200,11 @@ const Services = () => {
             </Card>
           </Col>
           <Col lg={4} md={6} sm={12}>
-            <Card data-aos="fade-in" data-aos-delay="500" data-aos-duration="1000">
+            <Card
+              data-aos="fade-in"
+              data-aos-delay="500"
+              data-aos-duration="1000"
+            >
               <div className="services-card-div">
                 <Card.Img
                   variant="top"

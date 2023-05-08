@@ -78,16 +78,16 @@ function Products() {
       } else {
         var pr = [];
         products.forEach((p) => {
-          if (milk && p.category === 'milk') {
+          if (milk && p['product_category'] === 'milk') {
             pr.push(p);
           }
-          if (curd && p.category === 'curd') {
+          if (curd && p['product_category'] === 'curd') {
             pr.push(p);
           }
-          if (paneer && p.category === 'paneer') {
+          if (paneer && p['product_category'] === 'paneer') {
             pr.push(p);
           }
-          if (yogurt && p.category === 'yogurt') {
+          if (yogurt && p['product_category'] === 'yogurt') {
             pr.push(p);
           }
         });
@@ -200,8 +200,8 @@ function Products() {
                 .filter((e) => {
                   return search.toLowerCase() === ''
                     ? e
-                    : e.category.toLowerCase().includes(search) ||
-                        e.name.toLowerCase().includes(search);
+                    : e['product_name'].toLowerCase().includes(search) ||
+                        e['product_category'].toLowerCase().includes(search);
                 })
                 .map((e, idx) => {
                   return (
@@ -212,17 +212,20 @@ function Products() {
                       >
                         <Card.Img
                           variant="top"
-                          src={e.images[0]}
+                          src={e['product_img'][0]}
                           width="100%"
                           height="200px"
                         />
                         <Card.Body>
                           <Card.Title>
-                            <h5>{e.name}</h5>
+                            <h5>{e['product_name']}</h5>
                           </Card.Title>
-                          <Card.Title>{e.category}</Card.Title>
-                          <Card.Title>{e.material}</Card.Title>
-                          <Card.Title>{e['automatic_grade']}</Card.Title>
+                          <Card.Title>
+                            {' '}
+                            <h6> Plant : {e['product_category']} </h6>
+                          </Card.Title>
+                          {/* <Card.Title>{e.material}</Card.Title>
+                          <Card.Title>{e['automatic_grade']}</Card.Title> */}
                           <Link to={`/products/${e.id}`}>
                             <Button className="primary">View</Button>
                           </Link>

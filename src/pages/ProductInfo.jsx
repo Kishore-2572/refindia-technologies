@@ -42,11 +42,14 @@ const ProductInfo = () => {
         finalData.forEach((element) => {
           if (element['id'] == productID) {
             setProduct(element);
-            category = element['category'];
+            category = element['product_category'];
           }
         });
         finalData.forEach((element) => {
-          if (element['category'] == category && element['id'] != productID) {
+          if (
+            element['product_category'] == category &&
+            element['id'] != productID
+          ) {
             temp.push(element);
           }
         });
@@ -82,14 +85,14 @@ const ProductInfo = () => {
                 <div className="productinfo-images">
                   <div className="productinfo-preview-image">
                     <img
-                      src={product.images[imageIndex]}
+                      src={product['product_img'][imageIndex]}
                       alt=""
                       className="product-image"
                     />
                   </div>
 
                   <div className="productinfo-preview-images">
-                    {product.images.map((element, idx) => {
+                    {product['product_img'].map((element, idx) => {
                       return (
                         <div
                           onClick={() => setImageIndex(idx)}
@@ -107,7 +110,19 @@ const ProductInfo = () => {
                 </div>
               </Col>
               <Col md={6} xs={12}>
-                <h4>{product.name}</h4>
+                <table>
+                  <tbody>
+                    {product['product_details_name'].map((e, idx) => {
+                      return (
+                        <tr>
+                          <td> {e}</td>
+                          <td>{product['product_details_value'][idx]}</td>
+                        </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+                {/* <h4>{product.name}</h4>
                 <h6>{product.cost}</h6>
                 <table>
                   <tr>
@@ -127,7 +142,7 @@ const ProductInfo = () => {
                     <td>{product.category}</td>
                   </tr>
                 </table>
-                <p>{product.description}</p>
+                <p>{product.description}</p> */}
                 <button className="product-info-btn" id="quote">
                   Get Latest Quote
                 </button>
