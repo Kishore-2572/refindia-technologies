@@ -175,7 +175,7 @@ function Products() {
                 className={paneer ? 'clicked' : 'not_clicked'}
                 onClick={() => handleFilter('paneer')}
               >
-                paneer Plant
+                Paneer Plant
               </Button>
               <Button
                 className={yogurt ? 'clicked' : 'not_clicked'}

@@ -66,7 +66,7 @@ function MarketPlace() {
         </div>
       ) : (
         <div>
-          <MarketPlaceFilter/>
+          <MarketPlaceFilter />
           {filter.length == 0 ? (
             <div className="sh-no-products">
               <h3>Currently there isn't any used products. Check back later</h3>
@@ -76,13 +76,12 @@ function MarketPlace() {
               />
             </div>
           ) : (
-            <Container fluid className='mx-2'>
-              <Row className='mt-2 mx-2'>
-                {
-                  filter.map((e, idx) => {
-                    return(
-                      <Col key={idx} lg={3} md={6} sm={12}>
-                                              <Card
+            <Container fluid className="mx-2">
+              <Row className="mt-2 mx-2">
+                {filter.map((e, idx) => {
+                  return (
+                    <Col key={idx} lg={3} md={6} sm={12}>
+                      <Card
                         className="team-member-card mb-2"
                         style={{ width: '18rem', height: '27rem' }}
                       >
@@ -105,10 +104,9 @@ function MarketPlace() {
                           </Link>
                         </Card.Body>
                       </Card>
-                      </Col>
-                    );
-                  })
-                }
+                    </Col>
+                  );
+                })}
               </Row>
               {/* <div className="sh-products">
               {' '}

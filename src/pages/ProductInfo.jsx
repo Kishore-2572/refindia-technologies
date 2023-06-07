@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Toaster from '../components/Toaster';
+// import PaytmButton from '../components/PaytmButton';
 
 const reducer = (state, action) => {
   switch (action.type) {
@@ -14,13 +15,28 @@ const reducer = (state, action) => {
       return { ...state, loading: true };
     case 'FETCHING_COMPLETED':
       return { ...state, loading: false };
+    case 'PAY_REQUEST':
+      return { ...state, loadingPay: true };
+    case 'PAY_SUCCESS':
+      return { ...state, loadingPay: false, successPay: true };
+    case 'PAY_FAIL':
+      return { ...state, loadingPay: false };
+    case 'PAY_RESET':
+      return { ...state, loadingPay: false, successPay: false };
+    default:
+      return state;
   }
 };
 
 const ProductInfo = () => {
-  const [{ loading }, dispatch] = useReducer(reducer, {
-    loading: false,
-  });
+  const [{ loading, error, order, successPay, loadingPay }, dispatch] =
+    useReducer(reducer, {
+      loading: true,
+      order: {},
+      error: '',
+      successPay: false,
+      loadingPay: false,
+    });
 
   const [product, setProduct] = useState(null);
   const [imageIndex, setImageIndex] = useState(0);
@@ -146,6 +162,7 @@ const ProductInfo = () => {
                 <button className="product-info-btn" id="quote">
                   Get Latest Quote
                 </button>
+                {/* <PaytmButton /> */}
               </Col>
             </Row>
             <Row>

@@ -7,6 +7,6 @@ import { Provider } from './store';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider>
-    <App />
+      <App />
   </Provider>
 );
