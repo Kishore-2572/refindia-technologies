@@ -1,3 +1,6 @@
+.second-products{
+  padding-top: 2rem;
+}
 .sh-no-products {
   width: 100wh;
   text-align: center;
@@ -23,4 +26,21 @@
   height: 20rem;
   background-color: blue;
   margin: 2rem 1rem;
+}
+.sh-product-card{
+  margin: 1rem auto;
+}
+.sh-product-card .card{
+  border: 0;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.product-card-link{
+  position: absolute;
+  bottom: 0.5rem;
+  width: 16rem;
+}
+
+.product-card-link button{
+  width: 100%;
 }

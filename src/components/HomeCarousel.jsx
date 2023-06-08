@@ -10,11 +10,9 @@ export default function HomeCarousel() {
     <Carousel>
       <Carousel.Item interval={3000}>
         <img className="d-block w-100" src={img1} alt="First slide" />
-        {/* <Carousel.Caption  className="cc-1"> */}
           <div className="carousel-button cc-1">
             <Link to="/about">Explore More</Link>{' '}
           </div>
-        {/* </Carousel.Caption> */}
       </Carousel.Item>
       <Carousel.Item interval={3000}>
         <img className="d-block w-100" src={img2} alt="Second slide" />
@@ -22,7 +20,7 @@ export default function HomeCarousel() {
             <Link to="/services">What We Offer</Link>
           </div>
       </Carousel.Item>
-      <Carousel.Item interval={300000}>
+      <Carousel.Item interval={3000}>
         <img className="d-block w-100" src={img3} alt="Third slide" />
           <div className="carousel-button cc-3">
             <Link to="/products">Grow together</Link>

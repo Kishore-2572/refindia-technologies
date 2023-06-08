@@ -30,7 +30,7 @@ const EmailContact = () => {
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <PhoneInput
                 className="contact-number"
-                country={'eg'}
+                country={'in'}
                 enableSearch={true}
                 value={phone}
                 onChange={(phone) => setPhone(phone)}

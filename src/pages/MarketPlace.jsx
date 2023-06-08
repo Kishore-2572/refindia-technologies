@@ -76,13 +76,12 @@ function MarketPlace() {
               />
             </div>
           ) : (
-            <Container fluid className="mx-2">
+            <Container fluid className="second-products">
               <Row className="mt-2 mx-2">
                 {filter.map((e, idx) => {
                   return (
-                    <Col key={idx} lg={3} md={6} sm={12}>
+                    <Col className='sh-product-card' >
                       <Card
-                        className="team-member-card mb-2"
                         style={{ width: '18rem', height: '27rem' }}
                       >
                         <Card.Img
@@ -95,12 +94,12 @@ function MarketPlace() {
                           <Card.Title>
                             <h5>{e.name}</h5>
                           </Card.Title>
-                          <Card.Title>{e.category}</Card.Title>
-                          <Card.Title>{e['cost']}</Card.Title>
+                          <Card.Text>Plant : {e.category}</Card.Text>
+                          <Card.Text>Price : {e['cost']}</Card.Text>
                           {/* must need attribute is no of days used  */}
-                          <Card.Title>{e['no_of_months_used']}</Card.Title>
-                          <Link to={`/products/${e.id}`}>
-                            <Button className="primary">View</Button>
+                          <Card.Text>Periods Used : {e['no_of_months_used']} months</Card.Text>
+                          <Link to={`/products/${e.id}`} className="product-card-link">
+                            <Button className="primary">Show more</Button>
                           </Link>
                         </Card.Body>
                       </Card>

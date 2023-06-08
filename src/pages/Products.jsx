@@ -6,7 +6,6 @@ import { getDocs, collection } from 'firebase/firestore';
 import LoadingSpinner from '../components/LoadingSpinner';
 import Toaster from '../components/Toaster';
 import '../css/products.css';
-import '../css/products_filter.css';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import Container from 'react-bootstrap/Container';
@@ -14,7 +13,6 @@ import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 import Form from 'react-bootstrap/Form';
 import Navbar from 'react-bootstrap/Navbar';
-import '../css/products.css';
 import { Link, useSearchParams } from 'react-router-dom';
 
 const reducer = (state, action) => {
@@ -41,6 +39,9 @@ function Products() {
   const [paneer, setPaneer] = useState(false);
   const [yogurt, setYogurt] = useState(false);
   const [status, setStatus] = useState(false);
+  const [description, setDescription] = useState(
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium suscipit delectus, nulla, sunt perspiciatis placeat error tempora quia impedit commodi quidem voluptate adipisci ipsa natus explicabo iusto nihil, neque culpa?'
+  );
 
   useEffect(() => {
     // Fetching products from firebase collection
@@ -183,7 +184,7 @@ function Products() {
               >
                 Yogurt Plant
               </Button>
-              <Form className="d-flex">
+              <Form className="d-flex prod-search">
                 <Form.Control
                   type="search"
                   placeholder="search by product name"
@@ -195,7 +196,7 @@ function Products() {
             </Container>
           </Navbar>
           <Container fluid className="mx-2">
-            <Row className="mt-4 mx-2">
+            <Row className="mt-4 mx-2 products-items">
               {filter
                 .filter((e) => {
                   return search.toLowerCase() === ''
@@ -205,9 +206,9 @@ function Products() {
                 })
                 .map((e, idx) => {
                   return (
-                    <Col key={idx} lg={3} md={6} sm={12}>
+                    <Col key={idx} className="products-card">
                       <Card
-                        className="team-member-card mb-2"
+                        className="products-card-inner"
                         style={{ width: '18rem', height: '27rem' }}
                       >
                         <Card.Img
@@ -217,17 +218,13 @@ function Products() {
                           height="200px"
                         />
                         <Card.Body>
-                          <Card.Title>
-                            <h5>{e['product_name']}</h5>
-                          </Card.Title>
-                          <Card.Title>
-                            {' '}
-                            <h6> Plant : {e['product_category']} </h6>
-                          </Card.Title>
-                          {/* <Card.Title>{e.material}</Card.Title>
-                          <Card.Title>{e['automatic_grade']}</Card.Title> */}
-                          <Link to={`/products/${e.id}`}>
-                            <Button className="primary">View</Button>
+                          <Card.Title>{e['product_name']}</Card.Title>
+                            <Card.Text>Plant : {e['product_category']}</Card.Text>
+                          <Link
+                            to={`/products/${e.id}`}
+                            className="product-card-link"
+                          >
+                            <Button className="primary ">Show more</Button>
                           </Link>
                         </Card.Body>
                       </Card>
